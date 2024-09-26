@@ -16,7 +16,7 @@ type Props = {
 } & DefaultProps;
 
 type DefaultProps = {
-    id: string;
+    id?: string;
     title?: string;
     project?: string;
 };
