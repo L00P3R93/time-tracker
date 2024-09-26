@@ -18,7 +18,7 @@ const ToggleableTimerForm: React.FC<Props> = ({ onFormSUbmit }) => {
     return (
         <View style={[styles.container, !isOpen && styles.buttonPadding]}>
             {isOpen ? (
-                <TimerForm onFormSubmit={handleFormSubmit} onFormClose={handleFormClose} />
+                <TimerForm id="" onFormSubmit={handleFormSubmit} onFormClose={handleFormClose} />
             ) : (
                 <TimerButton title="+" color="black" onPress={handleFormOpen} />
             )}
