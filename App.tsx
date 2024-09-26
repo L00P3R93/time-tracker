@@ -1,20 +1,52 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { StyleSheet, View, ScrollView, Text, TextStyle, ViewStyle } from 'react-native';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+import EditableTimer from './components/EditableTimer';
+import ToggleableTimerForm from './components/ToggleableTimerForm';
+
+const App : React.FC = () => {
+	return(
+		<View style={styles.appContainer}>
+			<View style={styles.titleContainer}>
+				<Text style={styles.title}>Timers</Text>
+			</View>
+			<ScrollView style={styles.timerListContainer}>
+
+			</ScrollView>
+		</View>
+	);
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+interface Style {
+	title:  TextStyle;
+	timerList: ViewStyle;
+	appContainer: ViewStyle;
+	titleContainer: ViewStyle;
+	timerListContainer: ViewStyle;
+}
+
+const styles = StyleSheet.create<Style>({
+	appContainer: {
+		flex: 1
+	},
+	titleContainer: {
+		paddingTop: 35,
+		paddingBottom: 15,
+		borderBottomWidth: 1,
+		borderBottomColor: '#D6D7DA',
+	},
+	title: {
+		fontSize: 18,
+		fontWeight: 'bold',
+		textAlign: 'center',
+	},
+	timerListContainer: {
+		flex: 1,
+	},
+	timerList: {
+		paddingBottom: 15,
+	},
 });
+
+
+export default App;
